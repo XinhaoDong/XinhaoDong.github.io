@@ -1,47 +1,204 @@
 <!DOCTYPE HTML>
-<!--
-  Strata by HTML5 UP (html5up.net)
-  Adapted for Xinhao Dong | License: CCA 3.0 (html5up.net/license)
--->
 <html>
+
 <head>
+
   <title>Xinhao Dong (Jack)</title>
+
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta name="description" content="Xinhao Dong — PhD candidate in Economics at Simon Fraser University. Research: monetary policy transmission, deposit-rate liberalization, bank competition, OLG demographics." />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <meta name="description"
+    content="Xinhao Dong — PhD candidate in Economics at Simon Fraser University." />
+
   <meta property="og:title" content="Xinhao Dong" />
-  <meta property="og:description" content="PhD candidate in Economics at Simon Fraser University. Monetary policy, liberalization, bank competition, OLG." />
+  <meta property="og:description"
+    content="PhD candidate in Economics at Simon Fraser University." />
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://XinhaoDong.github.io" />
+
   <link rel="stylesheet" href="assets/css/main.css" />
-  <!-- Avatar fix: keep image circular without stretching -->
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
   <style>
-    #header .image.avatar { width: 240px; height: 240px; }
+
+    /* =========================
+       Avatar
+    ========================= */
+
+    #header .image.avatar {
+      width: 240px;
+      height: 240px;
+    }
+
     #header .image.avatar img {
       width: 100%;
       height: 100%;
-      object-fit: cover;         /* crop instead of squish */
-      object-position: 50% 25%;  /* adjust vertical crop; tweak as needed */
+      object-fit: cover;
+      object-position: 50% 25%;
       border-radius: 50%;
     }
+
     @media (min-width: 980px) {
-      #header .image.avatar { width: 260px; height: 260px; }
+      #header .image.avatar {
+        width: 260px;
+        height: 260px;
+      }
     }
+
+    /* =========================
+       Typography
+    ========================= */
+
+    body {
+      line-height: 1.75;
+    }
+
+    h2 {
+      margin-bottom: 1.2rem;
+    }
+
+    h3 {
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /* =========================
+       Research Cards
+    ========================= */
+
+    .work-item {
+      margin-bottom: 3.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .paper-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.1rem;
+    }
+
+    .paper-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      padding: 0.72rem 1.05rem;
+
+      border-radius: 12px;
+
+      background: #1f2937;
+      color: white !important;
+
+      text-decoration: none;
+
+      font-weight: 600;
+      font-size: 0.92rem;
+
+      transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
+
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .paper-btn:hover {
+      background: #111827;
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 6px 18px rgba(0,0,0,0.14);
+    }
+
+    .paper-btn.secondary {
+      background: #f3f4f6;
+      color: #111827 !important;
+    }
+
+    .paper-btn.secondary:hover {
+      background: #e5e7eb;
+    }
+
+    /* =========================
+       CV Button
+    ========================= */
+
+    .cv-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      margin-top: 0.5rem;
+
+      padding: 0.8rem 1.15rem;
+
+      border-radius: 12px;
+
+      background: #111827;
+      color: white !important;
+
+      text-decoration: none;
+      font-weight: 600;
+
+      transition: all 0.2s ease;
+    }
+
+    .cv-btn:hover {
+      transform: translateY(-2px);
+      background: #000000;
+    }
+
+    /* =========================
+       Lists
+    ========================= */
+
+    ul {
+      margin-bottom: 1rem;
+    }
+
   </style>
-  </head>
+
+</head>
+
 <body class="is-preload">
 
   <!-- Header -->
   <header id="header">
+
     <div class="inner">
-      <!-- TODO: replace with your own headshot file, e.g., images/xinhao.jpg -->
-      <a href="#" class="image avatar"><img src="images/XinhaoDong_v1.jpg" alt="Portrait of Xinhao Dong" /></a>
+
+      <a href="#" class="image avatar">
+        <img src="images/XinhaoDong_v1.jpg"
+          alt="Portrait of Xinhao Dong" />
+      </a>
+
       <h1>
-        <strong>Xinhao Dong (Jack)</strong><br/>
-        PhD Candidate in Economics<br/>
-        at <a href="https://www.sfu.ca/" target="_blank" rel="noopener">Simon Fraser University</a>
+        <strong>Xinhao Dong (Jack)</strong><br />
+        PhD Candidate in Economics<br />
+        at
+        <a href="https://www.sfu.ca/"
+          target="_blank"
+          rel="noopener">
+          Simon Fraser University
+        </a>
       </h1>
+
     </div>
+
   </header>
 
   <!-- Main -->
@@ -49,176 +206,388 @@
 
     <!-- About -->
     <section id="one">
-      <header class="major"><h2>About</h2></header>
-      <p>
-        I’m a PhD candidate in Economics at Simon Fraser University, supervised by <b>Lucas Herrenbrueck</b>. 
-        My research interests lie in <b>macroeconomic theory</b>, <b>monetary policy</b>, and <b>family economics</b>. 
-        I study how policies transmit through banks and households: on the monetary side, I analyze China’s 2015 deposit-rate liberalization 
-        and reserve-requirement adjustments to quantify pass-through and to build structural models of deposit pricing and bank competition; 
-        on the family side, I develop <i>overlapping-generations (OLG)</i> frameworks and use micro data to examine how fertility, education, 
-        and pensions interact with policy and demographics. In addition, I collaborate with computer science researchers on 
-        a <b>game-theoretic framework for censorship and circumvention</b>, which models adaptive strategies between censors and 
-        censorship-resistance systems. Outside of research, I enjoy <i>photography</i>.</p>
 
+      <header class="major">
+        <h2>About</h2>
+      </header>
+
+      <p>
+        I am a PhD candidate in Economics at Simon Fraser University,
+        supervised by <b>Lucas Herrenbrueck</b>.
       </p>
 
-      <!-- Optional: add a compiled CV PDF to assets/files and update the link below -->
-      <p>Download my CV <a href="https://www.dropbox.com/scl/fi/7fz0nsyyr565wbi27vj8f/CV-XinhaoDong.pdf?rlkey=pzx06mhm9qja6abjbcc7mu156&st=ocjugllb&dl=0" target="_blank" rel="noopener">(PDF)</a>.</p>
+      <p>
+        My research interests lie in
+        <b>macroeconomic theory</b>,
+        <b>monetary policy</b>,
+        and <b>family economics</b>.
+        I study how policies transmit through banks and households.
+        On the monetary side, I analyze China’s 2015
+        deposit-rate liberalization and reserve-requirement
+        adjustments to quantify pass-through and develop
+        structural models of deposit pricing and bank competition.
+        On the family side, I develop overlapping-generations
+        (OLG) frameworks and use micro data to examine how
+        fertility, education, and pensions interact with policy
+        and demographics.
+      </p>
+
+      <p>
+        I also collaborate with computer science researchers on
+        game-theoretic models of censorship and circumvention.
+        Outside of research, I enjoy photography.
+      </p>
+
+      <a class="cv-btn"
+        href="https://www.dropbox.com/scl/fi/7fz0nsyyr565wbi27vj8f/CV-XinhaoDong.pdf?rlkey=pzx06mhm9qja6abjbcc7mu156&raw=1"
+        target="_blank"
+        rel="noopener">
+
+        <i class="fa-solid fa-file-pdf"></i>
+        Download CV
+
+      </a>
+
     </section>
 
     <!-- Research -->
     <section id="two">
+
       <h2>Research</h2>
 
-      <!-- Working Paper -->
+      <!-- Paper 1 -->
       <article class="work-item">
+
         <h3>
-          Financial Liberalization and the Effectiveness of Reserve Policy: Evidence from China’s 2015 Deposit Rate Reform
+          Financial Liberalization and the Effectiveness of Reserve Policy:
+          Evidence from China’s 2015 Deposit Rate Reform
         </h3>
-        <p><b>Working paper (2025).</b> After the removal of the deposit-rate ceiling, bank deposit rates become more
-          responsive to RRR changes, while average deposit rates decline. I provide supporting bank-level 
-          difference-in-differences evidence and a structural deposit-pricing model with reserve requirements that
-          rationalizes both findings.</p>
-        <ul class="actions">
-          <li><a class="button" href="https://www.dropbox.com/scl/fi/fjdbz883in90jk95rsp57/Financial_Liberalization_and_the_Effectiveness_of_Reserve_Policy__Evidence_from_China_s_2015_Deposit_Rate_Reform-1.pdf?rlkey=bo2wyrqfcyh5mkb4o71il8bdc&dl=0" target="_blank" rel="noopener">PDF</a></li>
-        </ul>
-        <p>Slides for AMES2026:</p>
-        <ul class="actions">
-          <li><a class="button" href="https://www.dropbox.com/scl/fi/is6lvzks47lwmavyvt56h/AMES2026.pdf?rlkey=fnmhim1kj0mden8gsi9vkf8pl&st=lqzz8cb3&dl=0">PDF</a></li>
-        </ul>
-        <p>Slides for CEA2026:</p>
-        <ul class="actions">
-          <li><a class="button" href="https://www.dropbox.com/scl/fi/51wvmqzktle9kyqwwx4at/CEA2026.pdf?rlkey=rf6gm8s9r4djm9iws5zhi2e9k&st=quck42vo&dl=0">PDF</a></li>
-        </ul>
+
+        <p>
+          <b>Working paper (2025).</b>
+          After the removal of the deposit-rate ceiling,
+          bank deposit rates become more responsive to
+          RRR changes, while average deposit rates decline.
+          I provide bank-level difference-in-differences
+          evidence and a structural deposit-pricing model
+          with reserve requirements that rationalizes
+          both findings.
+        </p>
+
+        <div class="paper-links">
+
+          <a class="paper-btn"
+            href="https://www.dropbox.com/scl/fi/fjdbz883in90jk95rsp57/Financial_Liberalization_and_the_Effectiveness_of_Reserve_Policy__Evidence_from_China_s_2015_Deposit_Rate_Reform-1.pdf?rlkey=bo2wyrqfcyh5mkb4o71il8bdc&raw=1"
+            target="_blank"
+            rel="noopener">
+
+            <i class="fa-solid fa-file-pdf"></i>
+            Paper
+
+          </a>
+
+          <a class="paper-btn secondary"
+            href="https://www.dropbox.com/scl/fi/is6lvzks47lwmavyvt56h/AMES2026.pdf?rlkey=fnmhim1kj0mden8gsi9vkf8pl&raw=1"
+            target="_blank"
+            rel="noopener">
+
+            <i class="fa-solid fa-file-powerpoint"></i>
+            AMES 2026 Slides
+
+          </a>
+
+          <a class="paper-btn secondary"
+            href="https://www.dropbox.com/scl/fi/51wvmqzktle9kyqwwx4at/CEA2026.pdf?rlkey=rf6gm8s9r4djm9iws5zhi2e9k&raw=1"
+            target="_blank"
+            rel="noopener">
+
+            <i class="fa-solid fa-file-powerpoint"></i>
+            CEA 2026 Slides
+
+          </a>
+
+        </div>
+
       </article>
 
-
+      <!-- Paper 2 -->
       <article class="work-item">
-        <h3>Pension Promises, Fertility, and Debt Sustainability</h3>
-        <p><b>Working paper (2026).</b> I study how pension policy can affect fertility and, in turn, the long-run sustainability of public debt. In an overlapping-generations 
-        model with endogenous fertility, pay-as-you-go pensions, and debt rollover, the same economy can exhibit both a low-fertility, debt-fragile equilibrium and a high-fertility,
-        debt-stable equilibrium. The paper shows how changes in promised pension transfers can move the economy between these demographic regimes by reshaping the future tax base.</p>
-        <ul class="actions">
-          <li><a class="button" href="https://www.dropbox.com/scl/fi/fxwxhs457s429dcd15fhw/Pension_Promises__Public_Debt__and_Multiple_Demographic_Steady_States.pdf?rlkey=nhwhfdgvu48o7tlni1y9pbk4f&st=1iupagj1&dl=0" target="_blank" rel="noopener">PDF</a></li>
-        </ul>
-        <p>Slides for SFU workshop:</p>
-        <ul class="actions">
-          <li><a class="button" href="https://www.dropbox.com/scl/fi/kvj863ihoioncj4uxtbbd/SFU528.pdf?rlkey=ab6roucaq36kbb3seeqng5i3r&st=hqirouby&dl=0" target="_blank" rel="noopener">PDF</a></li>
-        </ul>
+
+        <h3>
+          Pension Promises, Fertility, and Debt Sustainability
+        </h3>
+
+        <p>
+          <b>Working paper (2026).</b>
+          I study how pension policy affects fertility and,
+          in turn, the long-run sustainability of public debt
+          in overlapping-generations economies.
+        </p>
+
+        <div class="paper-links">
+
+          <a class="paper-btn"
+            href="https://www.dropbox.com/scl/fi/fxwxhs457s429dcd15fhw/Pension_Promises__Public_Debt__and_Multiple_Demographic_Steady_States.pdf?rlkey=nhwhfdgvu48o7tlni1y9pbk4f&raw=1"
+            target="_blank"
+            rel="noopener">
+
+            <i class="fa-solid fa-file-pdf"></i>
+            Paper
+
+          </a>
+
+          <a class="paper-btn secondary"
+            href="https://www.dropbox.com/scl/fi/kvj863ihoioncj4uxtbbd/SFU528.pdf?rlkey=ab6roucaq36kbb3seeqng5i3r&raw=1"
+            target="_blank"
+            rel="noopener">
+
+            <i class="fa-solid fa-file-powerpoint"></i>
+            Workshop Slides
+
+          </a>
+
+        </div>
+
       </article>
 
-      
+      <!-- Paper 3 -->
       <article class="work-item">
-        <h3>Interest Rates, Moneyness, and the Fisher Equation</h3>
+
+        <h3>
+          Interest Rates, Moneyness, and the Fisher Equation
+        </h3>
+
         <p><em>with Lucas Herrenbrueck and Zijian Wang</em></p>
-        <p><b>Working paper (2026).</b> We revisit the classic Fisher equation by showing that the standard 
-          formulation implicitly prices an unrealistically illiquid safe asset. Recognizing that real “safe” assets also 
-          serve as liquid means of payment, we show how moneyness affects the observed relationship between nominal rates, 
-          consumption growth, and inflation. This perspective helps resolve empirical puzzles in tests of the Fisher equation 
-          and clarifies how monetary policy transmits through financial markets.</p>
-        <ul class="actions">
-          <li><a class="button" href="https://herrenbrueck.weebly.com/uploads/1/3/3/9/13395560/2019-herrenbrueck-wang-fisherequation.pdf" target="_blank" rel="noopener">PDF</a></li>
-        </ul>
+
+        <p>
+          <b>Working paper (2026).</b>
+          We revisit the Fisher equation by recognizing that
+          safe assets also provide liquidity services.
+        </p>
+
+        <div class="paper-links">
+
+          <a class="paper-btn"
+            href="https://herrenbrueck.weebly.com/uploads/1/3/3/9/13395560/2019-herrenbrueck-wang-fisherequation.pdf"
+            target="_blank"
+            rel="noopener">
+
+            <i class="fa-solid fa-file-pdf"></i>
+            Paper
+
+          </a>
+
+        </div>
+
       </article>
-      
+
+      <!-- Paper 4 -->
       <article class="work-item">
-        <h3>
-          Strategic Obfuscation under Adaptive Censorship: A Game-Theoretic Framework
-        </h3>
-        <p><em>with Yuqi Hu</em></p>
-        <p><b>Working paper (2025).</b> Censorship and circumvention are strategic: censors adapt blocking while circumventors adjust obfuscation. 
-        I develop a unified game-theoretic framework where detectability is endogenous. The model characterizes one-shot and repeated-game equilibria, 
-        derives incentive-compatibility thresholds for sustained obfuscation, and shows how variance and seasonality in traffic can deter aggressive blocking 
-        under risk-averse censors.</p>
 
-        <ul class="actions">
-          <li><a class="button" href="https://www.dropbox.com/scl/fi/dqgy2tbgxe0x8p1149fnw/Strategic_Obfuscation_under_Adaptive_Censorship__A_Game_Theoretic_Framework.pdf?rlkey=2utjgs0zxkcxyz09gse2cjymn&st=xzr52wdb&dl=0" target="_blank" rel="noopener">PDF</a></li>
-        </ul>
+        <h3>
+          Strategic Obfuscation under Adaptive Censorship:
+          A Game-Theoretic Framework
+        </h3>
+
+        <p><em>with Yuqi Hu</em></p>
+
+        <p>
+          <b>Working paper (2025).</b>
+          I develop a game-theoretic framework in which
+          censors adapt blocking while circumventors
+          strategically adjust obfuscation.
+        </p>
+
+        <div class="paper-links">
+
+          <a class="paper-btn"
+            href="https://www.dropbox.com/scl/fi/dqgy2tbgxe0x8p1149fnw/Strategic_Obfuscation_under_Adaptive_Censorship__A_Game_Theoretic_Framework.pdf?rlkey=2utjgs0zxkcxyz09gse2cjymn&raw=1"
+            target="_blank"
+            rel="noopener">
+
+            <i class="fa-solid fa-file-pdf"></i>
+            Paper
+
+          </a>
+
+        </div>
+
       </article>
 
-      <!-- Works in Progress -->
+      <!-- Work in Progress -->
+      <article class="work-item">
 
+        <h3>
+          Does Pension System Integration Reduce Medical Utilization?
+          Evidence from China’s 2016 Urban–Rural Reform
+        </h3>
 
+        <p><em>with Yang Li</em></p>
 
-    <article class="work-item">
-      <h3>Does Pension System Integration Reduce Medical Utilization? Evidence from China’s 2016 Urban–Rural Reform</h3>
-      <p><em>with Yang Li</em></p>
-      <p><b>Work in progress.</b> After the 2016 integration of China’s urban and rural pension systems, rural elderly 
-        individuals experience changes in healthcare utilization and medical spending. Using CHARLS panel data, we provide 
-        difference-in-differences and stacked RD–DID evidence showing that pension eligibility increases medical spending 
-        while having limited short-run effects on underlying health status.</p>
-    </article>
+        <p>
+          <b>Work in progress.</b>
+          Using CHARLS panel data, we study how pension
+          integration affects healthcare utilization and
+          medical spending among rural elderly households.
+        </p>
+
+      </article>
 
     </section>
 
     <!-- Education -->
     <section id="education">
+
       <h2>Education</h2>
+
       <ul>
-        <li><b>Simon Fraser University</b>, Vancouver, Canada — PhD in Economics <span style="float:right">09/2023 – Present</span></li>
-        <li><b>Simon Fraser University</b>, Vancouver, Canada — MA in Economics <span style="float:right">09/2022 – 08/2023</span></li>
-        <li><b>University of British Columbia</b>, Vancouver, Canada — BA in Mathematics & Economics <span style="float:right">09/2018 – 06/2021</span></li>
+        <li>
+          <b>Simon Fraser University</b>,
+          PhD in Economics
+          <span style="float:right">
+            2023 – Present
+          </span>
+        </li>
+
+        <li>
+          <b>Simon Fraser University</b>,
+          MA in Economics
+          <span style="float:right">
+            2022 – 2023
+          </span>
+        </li>
+
+        <li>
+          <b>University of British Columbia</b>,
+          BA in Mathematics & Economics
+          <span style="float:right">
+            2018 – 2021
+          </span>
+        </li>
       </ul>
+
     </section>
 
-    <!-- Experience -->
+    <!-- Research Experience -->
     <section id="experience">
+
       <h2>Research Experience</h2>
-      <p><b>Research Assistant</b>, Simon Fraser University <span style="float:right">06/2024 – Present</span><br/>
-      Assisted Prof. Lucas Herrenbrueck on liquidity pricing.</p>
-      
-      <p><b>Research Assistant</b>, Simon Fraser University <span style="float:right">06/2023 – 01/2024</span><br/>
-      Assisted Prof. Serena Canaan on advisor religion and student outcomes.</p>
 
-      <p><b>Research Assistant</b>, UBC Vancouver School of Economics <span style="float:right">01/2020 – 09/2020</span><br/>
-      Worked with Prof. Li Hao on “Nash Equilibrium in Penalty Shootouts.”</p>
+      <p>
+        <b>Research Assistant</b>,
+        Simon Fraser University
+        <span style="float:right">
+          2024 – Present
+        </span>
+        <br />
+        Assisted Prof. Lucas Herrenbrueck on liquidity pricing.
+      </p>
 
-      
+      <p>
+        <b>Research Assistant</b>,
+        Simon Fraser University
+        <span style="float:right">
+          2023 – 2024
+        </span>
+        <br />
+        Assisted Prof. Serena Canaan on advisor religion and student outcomes.
+      </p>
+
+      <p>
+        <b>Research Assistant</b>,
+        UBC Vancouver School of Economics
+        <span style="float:right">
+          2020
+        </span>
+        <br />
+        Worked with Prof. Li Hao on Nash equilibrium in penalty shootouts.
+      </p>
+
     </section>
 
     <!-- Teaching -->
-<section id="teaching">
-  <h2>Teaching</h2>
-  <p><b>Teaching Assistant</b>, Simon Fraser University
-    <span style="float:right">09/2022 – Present</span>
-  </p>
-  <ul>
-    <li><b>Econ 103 — Principles of Microeconomics</b> (multiple terms)</li>
-    <li><b>Econ 201 / 302 — Intermediate Microeconomics</b></li>
-    <li><b>Econ 802 / 807 — Graduate Micro & Macro</b></li>
-    <li><b>Econ 325 — Industrial Organization</b></li>
-    <li><b>Econ 392 — Public Economics</b></li>
-  </ul>
-</section>
+    <section id="teaching">
 
+      <h2>Teaching</h2>
+
+      <p>
+        <b>Teaching Assistant</b>,
+        Simon Fraser University
+        <span style="float:right">
+          2022 – Present
+        </span>
+      </p>
+
+      <ul>
+        <li>Econ 103 — Principles of Microeconomics</li>
+        <li>Econ 201 / 302 — Intermediate Microeconomics</li>
+        <li>Econ 802 / 807 — Graduate Micro & Macro</li>
+        <li>Econ 325 — Industrial Organization</li>
+        <li>Econ 392 — Public Economics</li>
+      </ul>
+
+    </section>
 
     <!-- Skills -->
     <section id="skills">
+
       <h2>Skills</h2>
+
       <ul>
-        <li><b>Languages:</b> Mandarin (Native), English (Fluent)</li>
-        <li><b>Software:</b> R, Stata, LaTeX, Python</li>
+        <li><b>Languages:</b> Mandarin, English</li>
+        <li><b>Software:</b> R, Stata, Python, LaTeX</li>
       </ul>
+
     </section>
 
   </div>
 
   <!-- Footer -->
   <footer id="footer">
+
     <div class="inner">
+
       <ul class="icons">
-        <li><a href="mailto:Xinhao_dong@sfu.ca" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-        <li><a href="tel:+17788627719" class="icon solid fa-phone"><span class="label">Phone</span></a></li>
-        <li><a href="https://github.com/Divix-N" class="icon brands fa-github" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
-        <!-- Optional: add Google Scholar/LinkedIn links below -->
-        <!-- <li><a href="https://scholar.google.com/" class="icon solid fa-graduation-cap" target="_blank" rel="noopener"><span class="label">Scholar</span></a></li> -->
-        <!-- <li><a href="#" class="icon brands fa-linkedin" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li> -->
+
+        <li>
+          <a href="mailto:Xinhao_dong@sfu.ca"
+            class="icon solid fa-envelope">
+            <span class="label">Email</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="tel:+17788627719"
+            class="icon solid fa-phone">
+            <span class="label">Phone</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://github.com/Divix-N"
+            class="icon brands fa-github"
+            target="_blank"
+            rel="noopener">
+            <span class="label">GitHub</span>
+          </a>
+        </li>
+
       </ul>
+
       <ul class="copyright">
         <li>&copy; Xinhao Dong</li>
-        <li>Design: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a></li>
+        <li>
+          Design:
+          <a href="https://html5up.net"
+            target="_blank"
+            rel="noopener">
+            HTML5 UP
+          </a>
+        </li>
       </ul>
+
     </div>
+
   </footer>
 
   <!-- Scripts -->
@@ -228,23 +597,7 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
