@@ -618,6 +618,10 @@ summary {
   grid-column: span 5;
 }
 
+.gallery-item--narrow {
+  grid-column: span 5;
+}
+
 .gallery-item--wide {
   grid-column: span 7;
   margin-top: clamp(4rem, 10vw, 9rem);
@@ -949,6 +953,7 @@ summary {
 
   .gallery-item,
   .gallery-item--portrait,
+  .gallery-item--narrow,
   .gallery-item--wide,
   .gallery-item--centered {
     margin: 0 0 2.5rem;
