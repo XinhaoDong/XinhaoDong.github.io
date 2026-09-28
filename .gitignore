@@ -1,2 +1,4 @@
 .DS_Store
 source-photos/
+tmp/
+__pycache__/
