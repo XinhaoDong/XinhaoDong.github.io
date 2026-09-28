@@ -52,8 +52,8 @@ def education(pdf, school, location, degree, dates, y, supervisor=False):
     return y - 7
 
 
-def paper(pdf, name, summary, y, authors=None, link=None, note=None):
-    y -= 11
+def paper(pdf, name, summary, y, authors=None, link=None, note=None, gap=11):
+    y -= gap
     label = escape(name)
     if link:
         label = f'<link href="{escape(link)}" color="#000000">{label}</link>'
@@ -70,14 +70,55 @@ def line(pdf, value, y, indent=0, style=compact):
 
 
 def experience(pdf, institution, dates, description, y):
-    y -= 2
-    y = line(pdf, institution + "  |  " + dates, y, 0, title)
-    return line(pdf, description, y - 1)
+    y -= 10
+    role, _, organization = institution.partition(", ")
+    pdf.setFont("Times-Bold", 10.1)
+    pdf.drawString(L, y, role)
+    role_width = pdf.stringWidth(role, "Times-Bold", 10.1)
+    pdf.setFont("Times-Roman", 10.1)
+    pdf.drawString(L + role_width, y, ", " + organization)
+    pdf.drawRightString(W - R, y, dates)
+    return line(pdf, description, y - 3) - 5
+
+
+def subsection(pdf, label, y, gap=11):
+    y -= gap
+    pdf.setFont("Times-Bold", 10.45)
+    pdf.drawString(L, y, label)
+    return y - 8
+
+
+def venue(pdf, year, name, y):
+    y -= 4
+    pdf.setFont("Times-Roman", 10)
+    pdf.drawString(L + 10, y - 10, year)
+    return para(pdf, escape(name), y, compact, 49) - 2
 
 
 def footer(pdf, page):
     pdf.setFont("Times-Roman", 9)
     pdf.drawCentredString(W / 2, 30, str(page))
+
+
+def contact_line(pdf, y):
+    font, size = "Times-Roman", 10.3
+    email = "xinhao_dong@sfu.ca"
+    phone = "+1 778-862-7719"
+    website = "xinhaodong.github.io"
+    separator = "  |  "
+    pieces = [email, separator, phone, separator, website]
+    widths = [pdf.stringWidth(piece, font, size) for piece in pieces]
+    x = (W - sum(widths)) / 2
+    pdf.setFont(font, size)
+    for piece, width in zip(pieces, widths):
+        pdf.drawString(x, y, piece)
+        if piece == email:
+            pdf.linkURL("mailto:" + email, (x, y - 2, x + width, y + size))
+        elif piece == website:
+            pdf.setLineWidth(0.45)
+            pdf.line(x, y - 1.3, x + width, y - 1.3)
+            pdf.linkURL(SITE, (x, y - 2, x + width, y + size))
+        x += width
 
 
 def build(path):
@@ -90,11 +131,7 @@ def build(path):
     pdf.setFont("Times-Bold", 16.8)
     pdf.drawCentredString(W / 2, y, "Xinhao Dong (Jack)")
     y -= 20
-    pdf.setFont("Times-Roman", 10.3)
-    pdf.drawCentredString(W / 2, y,
-        "xinhao_dong@sfu.ca  |  +1 778-862-7719  |  xinhaodong.github.io")
-    pdf.linkURL("mailto:xinhao_dong@sfu.ca", (L, y - 2, L + 115, y + 10))
-    pdf.linkURL(SITE, (W - R - 119, y - 2, W - R, y + 10))
+    contact_line(pdf, y)
 
     y = section(pdf, "Education", y, 24)
     y = education(pdf, "Simon Fraser University", "Vancouver, BC, Canada",
@@ -165,28 +202,52 @@ def build(path):
         "imperfect public signals further tighten those conditions.",
         y, authors="Yuqi Hu",
         link=SITE + "assets/papers/strategic-obfuscation-adaptive-censorship.pdf")
-    y = section(pdf, "Work in Progress", y, 18)
+    y = section(pdf, "Work in Progress", y, 25)
     y = paper(pdf, "State or Type? Revolving Debt and Household Payment Choice",
-        "Separates current debt state from persistent borrower type in card repayment.", y)
-    y = paper(pdf, "The Structure and Selective Compression of Central-Bank Information",
-        "Studies what professional intermediaries retain from PBoC reports.", y)
+        "Using linked U.S. consumer payment surveys and transaction diaries, this project "
+        "asks whether the lower credit-card payment share of households carrying card debt "
+        "reflects their current revolving state or persistent differences in payment "
+        "behavior. It compares payment choices within households and across households.",
+        y, gap=3)
+    y = paper(pdf,
+        "The Structure and Selective Compression of Central-Bank Information: "
+        "Evidence from PBoC Reports and Professional Intermediaries",
+        "Using PBoC Monetary Policy Implementation Reports and professional articles "
+        "around their release, this project traces how central-bank statements are "
+        "selected and summarized. It examines selection into coverage separately "
+        "from whether reports preserve policy instruments, direction, magnitudes, "
+        "and timing.",
+        y, gap=13)
 
-    y = section(pdf, "Conference and Seminar Presentations", y, 14)
+    y = section(pdf, "Conference and Seminar Presentations", y, 25)
     y = line(pdf, "Financial Liberalization and the Effectiveness of Reserve Policy: "
         "Evidence from China's 2015 Deposit Rate Reform (earlier version)",
-        y - 5, 0, title) - 4
-    venues = [
-        "2026  CES China Annual Conference, Chengdu (July 3–5); "
-        "Econometric Society Asia Meeting-China, Hong Kong (June 19–21).",
-        "2026  Econometric Society North American Summer Meeting, Atlanta (June 4–7); "
-        "Canadian Economics Association Annual Meetings, SFU (May 28–30).",
-        "2026  Econometric Society Asia Meeting, Abu Dhabi.",
-        "2025  Econometric Society European Winter Meeting, Nicosia; SFU; UBC.",
+        y - 5, 0, title)
+    y = subsection(pdf, "Conferences", y, 11)
+    conferences = [
+        ("2026", "Chinese Economists Society (CES) China Annual Conference, Chengdu"),
+        ("2026", "Econometric Society Asia Meeting–China, Hong Kong"),
+        ("2026", "Econometric Society North American Summer Meeting, Atlanta"),
+        ("2026", "Canadian Economics Association Annual Meetings, Simon Fraser University"),
+        ("2026", "Econometric Society Asia Meeting, Abu Dhabi"),
+        ("2025", "Econometric Society European Winter Meeting, Nicosia"),
     ]
-    for venue in venues:
-        y = line(pdf, venue, y, 11) - 3
+    for year, name in conferences:
+        y = venue(pdf, year, name, y)
+    y = subsection(pdf, "Seminars", y, 14)
+    for name in [
+        "NYU Shanghai",
+        "Simon Fraser University",
+        "University of British Columbia",
+    ]:
+        y = venue(pdf, "2025", name, y)
+    if y < BOTTOM + 5:
+        raise RuntimeError(f"CV page 2 overflow: y={y:.1f}")
+    footer(pdf, 2)
+    pdf.showPage()
 
-    y = section(pdf, "Research Experience", y, 14)
+    y = H - TOP
+    y = section(pdf, "Research Experience", y, 0)
     y = experience(pdf, "Research Assistant, Simon Fraser University",
         "06/2024 – Present", "Research with Lucas Herrenbrueck on liquidity pricing.", y)
     y = experience(pdf, "Research Assistant, Simon Fraser University",
@@ -195,28 +256,29 @@ def build(path):
     y = experience(pdf, "Research Assistant, UBC Vancouver School of Economics",
         "01/2020 – 09/2020",
         "Research with Li Hao on Nash equilibrium in penalty shootouts.", y)
-    y = section(pdf, "Teaching Experience", y, 14)
+    y = section(pdf, "Teaching Experience", y, 22)
     y = experience(pdf, "Teaching Assistant, Simon Fraser University",
         "09/2022 – Present",
-        "Courses: Econ 103, 201, 302, 802, 807, 325, and 392.", y)
+        "Microeconomics (Econ 103, 201, 302, 802); macroeconomics (Econ 807); "
+        "industrial organization (Econ 325); public economics (Econ 392).", y)
 
-    y = section(pdf, "Fellowships, Honors, and Awards", y, 14)
+    y = section(pdf, "Fellowships, Honors, and Awards", y, 22)
     awards = [
-        "Peter Kennedy Memorial Graduate Fellowship (2026)",
-        "Lang Wong Memorial Scholarship in Economics (2025)",
-        "FASS Research Travel Award (2025)",
-        "PhD Research Scholarship (2023–2025)",
-        "Supplemental Graduate Fellowship (2025)",
-        "Special Graduate Entrance Scholarship (2024)",
+        "Peter Kennedy Memorial Graduate Fellowship, Simon Fraser University (2026)",
+        "Lang Wong Memorial Scholarship in Economics, Simon Fraser University (2025)",
+        "FASS Research Travel Award, Simon Fraser University (2025)",
+        "PhD Research Scholarship, Simon Fraser University (2023–2025)",
+        "Supplemental Graduate Fellowship, Simon Fraser University (2025)",
+        "Special Graduate Entrance Scholarship, Simon Fraser University (2024)",
     ]
     for award in awards:
-        y = line(pdf, "•  " + award, y, 7) - 2
-    y = section(pdf, "Skills", y, 14)
+        y = line(pdf, "•  " + award, y, 7) - 5
+    y = section(pdf, "Skills", y, 22)
     y = line(pdf, "Languages: Mandarin (native), English (fluent). "
              "Software: R, Stata, Python, LaTeX.", y - 4)
     if y < BOTTOM + 5:
-        raise RuntimeError(f"CV page 2 overflow: y={y:.1f}")
-    footer(pdf, 2)
+        raise RuntimeError(f"CV page 3 overflow: y={y:.1f}")
+    footer(pdf, 3)
     pdf.save()
 
 
