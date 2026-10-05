@@ -169,13 +169,12 @@ def build(path):
         "and delinquency.",
         y, link=SITE + "assets/papers/existing-credit-new-credit-monetary-transmission.pdf")
     y = paper(pdf,
-        "Who Gets Protection? Geographic Inequality in Social Protection after Land Expropriation in China",
-        "Using rural China Household Income Project surveys, I compare compensation "
-        "received by land-losing households across provinces and expropriation "
-        "cohorts. Earlier cohorts in fiscally weaker provinces were less likely "
-        "to receive continuing social protection and more likely to receive cash "
-        "alone; these gaps largely closed among later cohorts, while cross-province "
-        "dispersion fell by about one-third.",
+        "Who Gets Protection? Interprovincial Inequality in Social Protection after Land Expropriation in China",
+        "Using CHIP 2013 and 2018 data on 2,239 land-expropriated households, I "
+        "compare reported compensation across provinces and cohorts. Before 2008, "
+        "households in fiscally weaker provinces reported less continuing protection and more "
+        "cash only. Later fiscal gradients are weaker but imprecisely estimated; "
+        "gaps across twelve consistently observed provinces narrowed by about 38 percent.",
         y, link=SITE + "assets/papers/who-gets-protection.pdf")
     y = paper(pdf, "Pensions, Migration, and Three-Generation Family Reorganization",
         "Using age-60 eligibility around China's 2016 pension reform, we find "

@@ -22,7 +22,10 @@ def main():
     args = parser.parse_args()
 
     reader = PdfReader(args.source)
-    first = reader.pages[0]
+    writer = PdfWriter()
+    # Preserve the document's bookmarks and named destinations as well as pages.
+    writer.clone_document_from_reader(reader)
+    first = writer.pages[0]
     width = float(first.mediabox.width)
     height = float(first.mediabox.height)
     overlay_bytes = BytesIO()
@@ -37,10 +40,6 @@ def main():
     overlay_bytes.seek(0)
     first.merge_page(PdfReader(overlay_bytes).pages[0])
 
-    writer = PdfWriter()
-    writer.add_page(first)
-    for page in reader.pages[1:]:
-        writer.add_page(page)
     writer.add_metadata({
         "/Title": args.title,
         "/Author": args.authors,
