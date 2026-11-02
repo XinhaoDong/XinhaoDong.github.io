@@ -662,6 +662,11 @@ summary {
   grid-column: span 5;
 }
 
+/* Equal columns for paired vertical photographs; mobile uses the block gallery. */
+.gallery-item--paired-portrait {
+  grid-column: span 6;
+}
+
 .gallery-item--narrow {
   grid-column: span 5;
 }
