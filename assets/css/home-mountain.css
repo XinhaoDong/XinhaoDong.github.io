@@ -1,0 +1,273 @@
+/* Homepage: a cool palette drawn from the mountain photograph. */
+.home-page {
+  --paper: #f7f9fa;
+  --paper-bright: #ffffff;
+  --ink: #20364a;
+  --muted: #5c6b79;
+  --sage: #54768e;
+  --sage-dark: #355c77;
+  --gold: #87a8b9;
+  --line: rgba(32, 54, 74, 0.14);
+  --shadow: 0 20px 60px rgba(27, 49, 68, 0.12);
+}
+
+.home-page::before {
+  display: none;
+}
+
+.home-page a {
+  text-decoration-color: rgba(32, 54, 74, 0.35);
+}
+
+.home-page :focus-visible {
+  outline-color: #648fa9;
+}
+
+.home-page .site-header {
+  border-bottom-color: var(--line);
+  background: rgba(247, 249, 250, 0.95);
+}
+
+.mountain-hero {
+  position: relative;
+  height: clamp(440px, 36vw, 560px);
+  overflow: hidden;
+  background: #325b77;
+  color: #fff;
+}
+
+.mountain-hero-image,
+.mountain-hero-image img,
+.mountain-hero::after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mountain-hero-image img {
+  object-fit: cover;
+  object-position: 50% 55%;
+}
+
+.mountain-hero::after {
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(9, 29, 47, 0.48), rgba(9, 29, 47, 0.12) 63%, rgba(9, 29, 47, 0.04)),
+    linear-gradient(0deg, rgba(8, 26, 42, 0.2), transparent 35%);
+  pointer-events: none;
+}
+
+.mountain-hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-block: clamp(3rem, 3.8vw, 4.5rem) 3rem;
+  text-shadow: 0 2px 18px rgba(5, 24, 42, 0.2);
+}
+
+.mountain-hero-content .eyebrow {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+}
+
+.mountain-hero-content .eyebrow::before {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.mountain-hero h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4.4rem, 6.8vw, 6.5rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.mountain-hero-subtitle {
+  margin: 1.3rem 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  letter-spacing: 0.02em;
+}
+
+.mountain-credit {
+  position: absolute;
+  z-index: 1;
+  right: max(24px, calc((100vw - 1180px) / 2));
+  bottom: 1rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.home-intro {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(3rem, 6vw, 5.5rem);
+  padding-block: clamp(4rem, 6vw, 5.5rem) clamp(4.5rem, 7vw, 6rem);
+  scroll-margin-top: 100px;
+}
+
+.profile-photo {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 32px;
+  box-shadow: 0 12px 32px rgba(32, 54, 74, 0.09);
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 34%;
+}
+
+.home-intro-copy .eyebrow {
+  margin-bottom: 0.9rem;
+}
+
+.home-intro h2 {
+  max-width: 28ch;
+  margin: 0 0 1.25rem;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.home-intro-copy > p:not(.eyebrow) {
+  max-width: 740px;
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 1.04rem;
+}
+
+.home-intro .hero-actions {
+  margin-top: 1.7rem;
+}
+
+.home-page .research-card {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.home-page .photo-teaser {
+  background: #1c3041;
+}
+
+.home-page .photo-teaser-copy .eyebrow {
+  color: #d3e1e9;
+}
+
+@media (max-width: 900px) {
+  .home-intro {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+
+  .profile-photo {
+    margin-top: 0.3rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-page .site-nav {
+    background: rgba(247, 249, 250, 0.98);
+  }
+
+  .mountain-hero {
+    height: 320px;
+  }
+
+  .mountain-hero-image img {
+    object-position: 52% 60%;
+  }
+
+  .mountain-hero::after {
+    background: linear-gradient(90deg, rgba(9, 29, 47, 0.46), rgba(9, 29, 47, 0.16)),
+      linear-gradient(0deg, rgba(8, 26, 42, 0.18), transparent 35%);
+  }
+
+  .mountain-hero-content {
+    padding-block: 2rem;
+  }
+
+  .mountain-hero-content .eyebrow {
+    gap: 0.5rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+  }
+
+  .mountain-hero-content .eyebrow::before {
+    width: 24px;
+  }
+
+  .mountain-hero h1 {
+    font-size: clamp(3.2rem, 14vw, 4.2rem);
+  }
+
+  .mountain-hero-subtitle {
+    margin-top: 1rem;
+    font-size: 0.88rem;
+  }
+
+  .mountain-credit {
+    right: 18px;
+    bottom: 0.8rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
+  }
+
+  .home-intro {
+    grid-template-columns: 96px minmax(0, 1fr);
+    column-gap: 22px;
+    row-gap: 1.35rem;
+    padding-block: 3rem 3.5rem;
+  }
+
+  .profile-photo {
+    grid-row: 1 / span 2;
+    margin-top: 0;
+    border-radius: 20px;
+  }
+
+  .home-intro-copy {
+    display: contents;
+  }
+
+  .home-intro-copy .eyebrow {
+    align-self: end;
+    margin: 0;
+  }
+
+  .home-intro h2 {
+    align-self: start;
+    margin: 0;
+    font-size: 1.55rem;
+    line-height: 1.12;
+  }
+
+  .home-intro-copy > p:not(.eyebrow),
+  .home-intro .hero-actions {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .home-intro-copy > p:not(.eyebrow) {
+    font-size: 1rem;
+  }
+
+  .home-intro .hero-actions {
+    margin-top: 0.35rem;
+  }
+}
