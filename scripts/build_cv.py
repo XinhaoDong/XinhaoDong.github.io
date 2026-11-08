@@ -159,7 +159,7 @@ def build(path):
         "bonds, we estimate an average annual price of convenience of 5.5 percent; "
         "urgency accounts for 23 percent of it on average.",
         y, authors="Lucas Herrenbrueck and Zijian Wang",
-        link=SITE + "assets/papers/urgency-liquidity-price-of-convenience.pdf")
+        link="https://www.sfu.ca/~lherrenb/files/dhw2026urgency.pdf")
     y = paper(pdf, "Existing Commitments, New Credit, and Monetary Policy",
         "Using U.S. large-bank credit-card data, I find that monetary tightening "
         "lowers initial limits on new accounts relative to limits on open accounts, "
