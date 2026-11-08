@@ -160,13 +160,13 @@ def build(path):
         "urgency accounts for 23 percent of it on average.",
         y, authors="Lucas Herrenbrueck and Zijian Wang",
         link=SITE + "assets/papers/urgency-liquidity-price-of-convenience.pdf")
-    y = paper(pdf, "Existing Credit, New Credit, and Monetary Transmission",
-        "Using U.S. credit-card market data and high-frequency monetary surprises, "
-        "I distinguish the pricing of existing debt, limits on new accounts, and "
-        "credit already authorized on open accounts. Tightening raises borrowing "
-        "rates and weakens initial limits, but does not contract existing lines "
-        "across four measured margins; households instead increase utilization "
-        "and delinquency.",
+    y = paper(pdf, "Existing Commitments, New Credit, and Monetary Policy",
+        "Using U.S. large-bank credit-card data, I find that monetary tightening "
+        "lowers initial limits on new accounts relative to limits on open accounts, "
+        "while total commitments and account counts do not decline. New "
+        "authorizations move the credit stock slowly. A household financing "
+        "framework shows why credit removed at origination can reduce spending "
+        "more than the same amount withdrawn from existing lines.",
         y, link=SITE + "assets/papers/existing-credit-new-credit-monetary-transmission.pdf")
     y = paper(pdf,
         "Who Gets Protection? Interprovincial Inequality in Social Protection after Land Expropriation in China",

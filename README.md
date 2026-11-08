@@ -23,6 +23,19 @@ to their first pages. The pension and migration paper retains its collaborator
 link. To update the CV, rebuild `assets/cv/CV_XinhaoDong.pdf` and also replace
 the local administrative copy.
 
+## Updating the credit-card paper
+
+The homepage and CV retain the stable public URL
+[`assets/papers/existing-credit-new-credit-monetary-transmission.pdf`](https://xinhaodong.github.io/assets/papers/existing-credit-new-credit-monetary-transmission.pdf).
+The current title is *Existing Commitments, New Credit, and Monetary Policy*.
+The public working paper was built on 8 November 2026 from the 7 November
+v3 submission sources: only review line numbers and the submission disclosure
+block were removed. The 12-point, double-spaced format and all substantive
+content, references and online appendices are retained (53 pages).
+The local dated PDF is in the research project's
+`rewrite_20261106_v3/output/pdf/`; its build sources are in
+`rewrite_20261106_v3/working_paper/source/`.
+
 ## Updating the CHIP paper
 
 The homepage title, Paper button, and CV share the stable public URL
