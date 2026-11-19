@@ -27,14 +27,15 @@ the local administrative copy.
 
 The homepage and CV retain the stable public URL
 [`assets/papers/existing-credit-new-credit-monetary-transmission.pdf`](https://xinhaodong.github.io/assets/papers/existing-credit-new-credit-monetary-transmission.pdf).
-The current title is *Existing Commitments, New Credit, and Monetary Policy*.
-The public working paper was built on 8 November 2026 from the 7 November
-v3 submission sources: only review line numbers and the submission disclosure
-block were removed. The 12-point, double-spaced format and all substantive
-content, references and online appendices are retained (53 pages).
-The local dated PDF is in the research project's
-`rewrite_20261106_v3/output/pdf/`; its build sources are in
-`rewrite_20261106_v3/working_paper/source/`.
+The current title is *Monetary Policy and Credit Limits: New versus Existing Cards*.
+The current public PDF is the 46-page reading copy built on 18 November 2026,
+copied without modification from the research project's
+`LATEST_DRAFT/Paper_A_latest.pdf` on 19 November 2026.
+`LATEST_DRAFT/VERSION.txt` identifies the source revision as
+`rewrite_20261117_nominal`. Replace the public PDF from `LATEST_DRAFT/` for
+future updates, verify the copy, and synchronize the title and summaries in
+`index.html` and `scripts/build_cv.py`. No earlier-title annotation is displayed.
+The EWMES 2026 slides remain linked below the paper.
 
 ## Updating the CHIP paper
 

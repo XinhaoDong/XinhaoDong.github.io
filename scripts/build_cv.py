@@ -160,13 +160,12 @@ def build(path):
         "urgency accounts for 23 percent of it on average.",
         y, authors="Lucas Herrenbrueck and Zijian Wang",
         link="https://www.sfu.ca/~lherrenb/files/dhw2026urgency.pdf")
-    y = paper(pdf, "Existing Commitments, New Credit, and Monetary Policy",
-        "Using U.S. large-bank credit-card data, I find that monetary tightening "
-        "lowers initial limits on new accounts relative to limits on open accounts, "
-        "while total commitments and account counts do not decline. New "
-        "authorizations move the credit stock slowly. A household financing "
-        "framework shows why credit removed at origination can reduce spending "
-        "more than the same amount withdrawn from existing lines.",
+    y = paper(pdf, "Monetary Policy and Credit Limits: New versus Existing Cards",
+        "Using U.S. bank data, I find that a typical monetary tightening surprise "
+        "lowers median limits on new credit cards by 5.1 percent relative to "
+        "existing cards, with no measurable decline in total limits. A household "
+        "financing framework implies that a dollar removed from new card limits "
+        "reduces spending 2.35 times as much as a dollar removed from existing limits.",
         y, link=SITE + "assets/papers/existing-credit-new-credit-monetary-transmission.pdf")
     y = paper(pdf,
         "Who Gets Protection? Interprovincial Inequality in Social Protection after Land Expropriation in China",
